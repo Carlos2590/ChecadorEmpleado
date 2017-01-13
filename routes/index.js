@@ -12,20 +12,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/lista_mensaje', function(req,res){
-  res.render('lista_mensaje');
-});
-router.get('/dialogos/db/dpto', dialogo.dpto);
-router.get('/dialogos/db/dialogo/:cd', dialogo.dialogo);
-
-router.get('/dialogos', function(req, res) {
-
-  var msjres = req.flash('message');
-  res.render('dialogos', {message: msjres[0]});
-});
-
-
-
 router.get('/registro', function(req, res){
 	res.render('registro', {message: req.flash('message')});
 });
@@ -182,9 +168,6 @@ router.post('/salida', function(req, res){
 
 	});
 });
-
-
-
 
 
 
