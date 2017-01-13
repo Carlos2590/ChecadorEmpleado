@@ -186,7 +186,7 @@
 									</font>
 								</label>
 							<div class="controls">	
-								<input type="text" id="No_empleado" minlength="8" maxlength="8"  placeholder="Ejemplo: 97558591" name="No_empleado"  required>		
+								<input type="text" id="No_empleado" onkeypress="return soloNumeros(event)" minlength="8" maxlength="8"  placeholder="Ejemplo: 97558591" name="No_empleado"  required>		
 							</div>
 							</div>
 
@@ -197,7 +197,7 @@
 									</font>
 								</label>
 							<div class="controls">	
-								<input type="text" id="confirm_No_empleado" placeholder="Ejemplo: 97558591"  minlength="8" maxlength="8" name="confirm_No_empleado" oninput="check(this, 'No_empleado', 'El numero de empleado no coincide')" required>		
+								<input type="text" id="confirm_No_empleado" onkeypress="return soloNumeros(event)" placeholder="Ejemplo: 97558591"  minlength="8" maxlength="8" name="confirm_No_empleado" oninput="check(this, 'No_empleado', 'El numero de empleado no coincide')" required>		
 							</div>
 							</div>							
 
@@ -333,7 +333,27 @@
 		            return false;
 		        }
 		    }
-		</script>		
+		</script>
+		<script>
+		    function soloNumeros(e){
+		       key = e.keyCode || e.which;
+		       tecla = String.fromCharCode(key).toLowerCase();
+		       letras = "123456789";
+		       especiales = "8-37-39-46";
+
+		       tecla_especial = false
+		       for(var i in especiales){
+		            if(key == especiales[i]){
+		                tecla_especial = true;
+		                break;
+		            }
+		        }
+
+		        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+		            return false;
+		        }
+		    }
+		</script>	
 
 
 		<script src=" /js/bootstrap.min.js"></script>
