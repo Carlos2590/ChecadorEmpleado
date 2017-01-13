@@ -128,14 +128,14 @@
 													<fieldset>
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" id="No_empleado"  placeholder="Introduce tu numero de empleado" name="No_empleado"  required>
+																<input type="text" class="span12" id="No_empleado" minlength="8" maxlength="8" onpaste="return false" onkeypress="return soloNumeros(event)"  placeholder="Introduce tu numero de empleado" name="No_empleado"  required>
 																<i class="icon-user"></i>
 															</span>
 														</label>
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" id="confirm_No_empleado" placeholder="Confirmar numero de empleado" name="confirm_No_empleado" oninput="check(this, 'No_empleado', 'El numero de empleado no coincide')" required>
+																<input type="text" class="span12" id="confirm_No_empleado" minlength="8" maxlength="8" onpaste="return false" onkeypress="return soloNumeros(event)" placeholder="Confirmar numero de empleado" name="confirm_No_empleado" oninput="check(this, 'No_empleado', 'El numero de empleado no coincide')" required>
 																<i class="icon-user"></i>
 															</span>
 														<div id="clock"></div>													
@@ -213,6 +213,26 @@
 			}
 		}
 		</script>
+		<script>
+		    function soloNumeros(e){
+		       key = e.keyCode || e.which;
+		       tecla = String.fromCharCode(key).toLowerCase();
+		       letras = "123456789";
+		       especiales = "8-37-39-46";
+
+		       tecla_especial = false
+		       for(var i in especiales){
+		            if(key == especiales[i]){
+		                tecla_especial = true;
+		                break;
+		            }
+		        }
+
+		        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+		            return false;
+		        }
+		    }
+		</script>	
 		<script type="text/javascript">
 			function startTime(){
 				today=new Date();
