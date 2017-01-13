@@ -9,8 +9,7 @@ var app = express();
 // }
 // else{
 // 	if (app.get('env') === 'development'){
-var url_test = 'mongodb://localhost/Empleados';	
-var url = 'mongodb://admin90:123456@ds023245@ds163698.mlab.com:63698/heroku_qp77nht7';
+var  url = 'mongodb://admin:123456@ds023245.mlab.com:23245/heroku_9gv89pgx';	
 // 	}
 // 	else{
 //  		var  url = 'mongodb://admin:123456@ds051903.mlab.com:51903/heroku_554zpg9r';	
