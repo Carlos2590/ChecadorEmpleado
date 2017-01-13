@@ -5,7 +5,6 @@ var passport = require('passport');
 var Empleado = require('../models/empleado.js');
 var Entrada = require('../models/entrada.js');
 var Salida = require('../models/salida.js');
-var dialogo = require('../controllers/lista_mensaje');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
